@@ -10,7 +10,8 @@ just reimplementation of [OS in 1k lines](https://operating-system-in-1000-lines
 
 **linux**
 ```sh
-sudo apt update && sudo apt install -y zig qemu-system-riscv32 curl
+sudo apt update && sudo apt install -y snapd qemu-system-misc curl
+sudo snap install zig --beta --classic
 git clone https://github.com/dgv/zOS; cd zOS
 curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic-fw_dynamic.bin
 zig build run

@@ -23,8 +23,7 @@ pub fn build(b: *std.Build) void {
         "-kernel",
         "./zig-out/bin/kernel.elf",
     });
-    const kernel = b.addRunArtifact(exe);
+    qemu.step.dependOn(b.getInstallStep());
     const run_step = b.step("run", "run kernel.elf on qemu");
-    run_step.dependOn(&kernel.step);
     run_step.dependOn(&qemu.step);
 }
